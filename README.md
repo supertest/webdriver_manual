@@ -1,4 +1,76 @@
-webdriver_manual
-================
+selenium webdriver 基础手册
+=========================
+这个手册的主要目的是为了新人在学习的时候能够快速了解webdriver的使用.
 
-Selenium WebDriver 鍩虹瀛︿範鎵嬪唽锛宩ava鍜宲ython璇█
+webdriver实用指南java版本
+=========================
+
+* [启动浏览器](/01/start_browser.java.md)
+* [关闭浏览器](/02/close_browser.java.md)
+* [浏览器最大化](/03/maximize_browser.java.md)
+* [设置浏览器大小](/04/resize_browser.java.md)
+* [访问链接](/05/get.java.md)
+* [打印当前页面的title及url](06/title_and_url.java.md)
+* [前进和后退](07/forword_and_back.java.md)
+* [简单的对象定位](/08/simple_locate.java.md)
+* [定位一组对象](/09/find_elements.java.md)
+* [层级定位](/10/level_locate.java.md)
+* [操作测试对象](/11/operate_element.java.md)
+* [send keys模拟按键输入](/12/send_keys.java.md)
+* [处理button group](/13/button_group.java.md)
+* [处理button dropdown](/14/button_dropdown.java.md)
+* [处理navs](/15/navs.java.md)
+* [处理面包屑](/16/breadcrumb.java.md)
+* [处理对话框新式的模态窗口](/18/modal.java.md)
+* [获取测试对象的属性及内容](/19/attribute.java.md)
+* [获取测试对象的css属性](/20/css.java.md)
+* [获取测试对象的状态](/21/status.java.md)
+* [处理表单元素](/22/form.java.md)
+* [执行js](/23/js.java.md)
+* [处理alert/confirm/prompt](/24/alert.java.md)
+* [wait](/25/wait.java.md)
+* [定位frame中的元素](/26/frame.java.md)
+* [action](/27/action.java.md)
+* [上传文件](/28/upload_file.java.md)
+* [下载](/29/download.java.md)
+* [超时设置](/30/timeout.java.md)
+* [Remote Webdriver](/31/remote.md)
+* [cookie与自动登陆](/32/cookie.java.md)
+
+-----------------------------------------------------------
+
+webdriver实用指南python版本
+=========================
+
+
+* [启动浏览器](/01/start_browser.py.md)
+* [关闭浏览器](/02/close_browser.py.md)
+* [浏览器最大化](/03/maximize_browser.py.md)
+* [设置浏览器大小](/04/resize_browser.py.md)
+* [访问链接](/05/get.py.md)
+* [打印当前页面的title及url](06/title_and_url.py.md)
+* [前进和后退](07/forword_and_back.py.md)
+* [简单的对象定位](/08/simple_locate.py.md)
+* [定位一组对象](/09/find_elements.py.md)
+* [层级定位](/10/level_locate.py.md)
+* [操作测试对象](/11/operate_element.py.md)
+* [send keys模拟按键输入](/12/send_keys.py.md)
+* [处理button group](/13/button_group.py.md)
+* [处理button dropdown](/14/button_dropdown.py.md)
+* [处理navs](/15/navs.py.md)
+* [处理面包屑](/16/breadcrumb.py.md)
+* [处理对话框新式的模态窗口](/18/modal.py.md)
+* [获取测试对象的属性及内容](/19/attribute.py.md)
+* [获取测试对象的css属性](/20/css.py.md)
+* [获取测试对象的状态](/21/status.py.md)
+* [处理表单元素](/22/form.py.md)
+* [执行js](/23/js.py.md)
+* [处理alert/confirm/prompt](/24/alert.py.md)
+* [wait](/25/wait.py.md)
+* [定位frame中的元素](/26/frame.py.md)
+* [action](/27/action.py.md)
+* [上传文件](/28/upload_file.py.md)
+* [下载](/29/download.py.md)
+* [超时设置](/30/timeout.py.md)
+* [Remote Webdriver](/31/remote.md)
+* [cookie与自动登陆](/32/cookie.py.md)
