@@ -23,7 +23,7 @@ sendKeys方法可以模拟一些组合键操作，比如ctrl+a等。另外有时
 			<div class="span3">		
 				<div class="well">
 					<label>A</label>
-					<textarea rows="10", cols="10" id="A">I think watir-webdriver is better than selenium-webdriver</textarea>
+					<textarea rows="10", cols="10" id="A">selenium-webdriver</textarea>
 				</div>			
 			</div>
 			<div class="span3">		
@@ -45,17 +45,17 @@ sendKeys方法可以模拟一些组合键操作，比如ctrl+a等。另外有时
 	import org.openqa.selenium.By;
 	import org.openqa.selenium.Keys;
 	import org.openqa.selenium.WebDriver;
-	import org.openqa.selenium.chrome.ChromeDriver;
+	import org.openqa.selenium.firefox.FirefoxDriver;
 
 
 	public class SendKeys {
 
 		public static void main(String[] args) throws InterruptedException {
-			WebDriver dr = new ChromeDriver();
+			WebDriver dr = new FirefoxDriver();
 			
 			File file = new File("src/send_keys.html");
 			String filePath = "file:///" + file.getAbsolutePath();
-			System.out.printf("now accesss %s \n", filePath);
+			
 			
 			dr.get(filePath);
 			Thread.sleep(1000);
@@ -69,7 +69,7 @@ sendKeys方法可以模拟一些组合键操作，比如ctrl+a等。另外有时
 			dr.findElement(By.id("B")).sendKeys(Keys.chord(Keys.CONTROL + "v"));
 			
 	//		SendKeys to A
-			dr.findElement(By.id("A")).sendKeys(Keys.chord("watir webdriver is better than selenium webdriver"));
+			dr.findElement(By.id("A")).sendKeys(Keys.chord("Tom's selenium webdriver"));
 			
 			Thread.sleep(1000);
 			System.out.println("browser will be close");

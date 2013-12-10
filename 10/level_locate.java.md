@@ -56,14 +56,14 @@
 
 ```
 
-### level_locate.java
+### LevelLocate.java
 ```
 	import java.io.File;
 
 	import org.openqa.selenium.By;
 	import org.openqa.selenium.WebDriver;
 	import org.openqa.selenium.WebElement;
-	import org.openqa.selenium.chrome.ChromeDriver;
+	import org.openqa.selenium.firefox.FirefoxDriver;
 	import org.openqa.selenium.interactions.Actions;
 	import org.openqa.selenium.support.ui.ExpectedCondition;
 	import org.openqa.selenium.support.ui.WebDriverWait;
@@ -72,11 +72,10 @@
 	public class LevelLocate {
 
 		public static void main(String[] args) throws InterruptedException {
-			WebDriver dr = new ChromeDriver();
+			WebDriver dr = new FirefoxDriver();
 			
 			File file = new File("src/level_locate.html");
 			String filePath = "file:///" + file.getAbsolutePath();
-			System.out.printf("now accesss %s \n", filePath);
 			
 			dr.get(filePath);
 			Thread.sleep(1000);
@@ -88,7 +87,7 @@
 					return d.findElement(By.id("dropdown1")).isDisplayed();
 				}
 			} );
-			
+			//层级定位
 			WebElement menu = dr.findElement(By.id("dropdown1")).findElement(By.linkText("Another action"));
 			(new Actions(dr)).moveToElement(menu).perform();
 			
@@ -102,6 +101,6 @@
 
 ```
 
-讨论
+备注
 ----
 move_to方法实际上是模拟把鼠标移动到某个具体的测试对象上。

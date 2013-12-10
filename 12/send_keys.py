@@ -2,9 +2,9 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from time import sleep
 import os
-if 'HTTP_PROXY'in os.environ: del os.environ['HTTP_PROXY']
 
-dr = webdriver.Chrome()
+
+dr = webdriver.Firefox()
 file_path = 'file:///' + os.path.abspath('send_keys.html')
 
 dr.get(file_path)
@@ -19,7 +19,7 @@ dr.find_element_by_id('B').send_keys((Keys.CONTROL, 'v'))
 sleep(1)
 
 # # send keys to A
-dr.find_element_by_id('A').send_keys('watir', '-', 'webdriver', Keys.SPACE, 'is', Keys.SPACE, 'better')
+dr.find_element_by_id('A').send_keys( "tom's", Keys.SPACE, 'webdriver')
 sleep(2)
 
 dr.quit()

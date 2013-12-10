@@ -3,7 +3,7 @@ from selenium import webdriver
 import time
 import os
 
-dr = webdriver.Chrome()
+dr = webdriver.Firefox()
 file_path =  'file:///' + os.path.abspath('checkbox.html')
 dr.get(file_path)
 
@@ -14,7 +14,8 @@ for checkbox in checkboxes:
 time.sleep(1)
 dr.refresh()
 time.sleep(2)
-
+#选择某一个元素，可以这样做
+checkboxes[0].click()
 # 打印当前页面上有多少个checkbox
 print len(dr.find_elements_by_css_selector('input[type=checkbox]'))
 

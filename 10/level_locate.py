@@ -4,7 +4,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 import time
 import os
 
-dr = webdriver.Chrome()
+dr = webdriver.Firefox()
 file_path =  'file:///' + os.path.abspath('level_locate.html')
 dr.get(file_path)
 

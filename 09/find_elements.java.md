@@ -3,7 +3,7 @@
 
 场景
 ----
-从上一节的例子中可以看出，webdriver可以很方便的使用findElement方法来定位某个特定的对象，不过有时候我们却需要定位一组对象，这时候就需要使用findElements方法。
+webdriver除了可以很方便的使用findElement方法来定位某个特定的对象，还可以使用findElements去定位一组对象。
 
 定位一组对象一般用于以下场景：
 
@@ -81,17 +81,19 @@
 			dr.get(filePath);
 			Thread.sleep(1000);
 			
-	//		选择所有的checkbox并全部勾上
+			//选择所有的checkbox并全部勾上
 			List<WebElement> checkboxes = dr.findElements(By.cssSelector("input[type=checkbox]"));
 			for(WebElement checkbox : checkboxes) {
 				checkbox.click();
 			}
 			dr.navigate().refresh();
-			
-	//		打印当前页面上有多少个checkbox
+			//对某一个元素进行操作，可以这样做
+		    inputs.get(0).click()//选择第一个checkbox
+		
+			//打印当前页面上有多少个checkbox
 			System.out.printf("%d\n", checkboxes.size());
 			
-	//		选择页面上所有的input，然后从中过滤出所有的checkbox并勾选之
+			//选择页面上所有的input，然后从中过滤出所有的checkbox并勾选之
 			List<WebElement> inputs = dr.findElements(By.tagName("input"));
 			for(WebElement input : inputs){
 				if(input.getAttribute("type").equals("checkbox")){
@@ -99,7 +101,7 @@
 				}
 			}
 			
-	//		把页面上最后1个checkbox的勾给去掉
+			//把页面上最后1个checkbox的勾给去掉
 			List<WebElement> allCheckboxes = dr.findElements(By.cssSelector("input[type=checkbox]"));
 			allCheckboxes.get(allCheckboxes.size() - 1).click();
 			
@@ -112,6 +114,3 @@
 
 ```
 
-讨论
-----
-checkbox.html必须与find_elments.rb在同一级目录下
