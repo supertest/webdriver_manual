@@ -1,13 +1,13 @@
-处理面包屑
+处理UL下面的LI
 ===========
 
 场景
 ----
-在实际的测试脚本中，有可能需要处理面包屑。处理面包屑主要是获取其层级关系，以及获得当前的层级。一般来说当前层级都不会是链接，而父层级则基本是以链接，所以处理面包屑的思路就很明显了。找到面包屑所在的div或ul，然后再通过该div或ul找到下面的所有链接，这些链接就是父层级。最后不是链接的部分就应该是当前层级了。
+在实际测试用我们经常需要验证或者点击UI或者DIV下面的元素，一般以UL下面的LI最为常见，下面介绍使用层级定位来处理。
 
 代码
 ----
-### breadcrumb.html
+### UL.html
 ```
 	<html>
 		<head>
@@ -51,7 +51,7 @@
 	import org.openqa.selenium.chrome.ChromeDriver;
 
 
-	public class Breadcrumb {
+	public class ULLi {
 
 		public static void main(String[] args) throws InterruptedException {
 			WebDriver dr = new ChromeDriver();
