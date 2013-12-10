@@ -1,9 +1,9 @@
-处理面包屑
+处理UL下面的LI
 ===========
 
 场景
 ----
-在实际的测试脚本中，有可能需要处理面包屑。处理面包屑主要是获取其层级关系，以及获得当前的层级。一般来说当前层级都不会是链接，而父层级则基本是以链接，所以处理面包屑的思路就很明显了。找到面包屑所在的div或ul，然后再通过该div或ul找到下面的所有链接，这些链接就是父层级。最后不是链接的部分就应该是当前层级了。
+在实际测试用我们经常需要验证或者点击UI或者DIV下面的元素，一般以UL下面的LI最为常见，下面介绍使用层级定位来处理。
 
 代码
 ----
@@ -27,7 +27,7 @@
 			<h3>breadcrumb</h3>
 			<div class="row-fluid">
 				<div class="span3">		
-					<ul class="breadcrumb">
+					<ul class="uitest">
 						<li><a href="#">Home</a> <span class="divider">/</span></li>
 						<li><a href="#">Library</a> <span class="divider">/</span></li>
 						<li class="active">Data</li>
@@ -46,18 +46,18 @@
 	require 'selenium-webdriver'
 
 	dr = Selenium::WebDriver.for :chrome
-	file_path = 'file:///' + File.expand_path(File.join('.', 'breadcrumb.html'))
+	file_path = 'file:///' + File.expand_path(File.join('.', 'ulli.html'))
 	dr.get file_path
 
 	# 获得其父层级
-	anstors = dr.find_element(:class, 'breadcrumb').find_elements(:tag_name, 'a').map { |link| link.text }
+	anstors = dr.find_element(:class, 'ulli').find_elements(:tag_name, 'a').map { |link| link.text }
 	p anstors
 	sleep(1)
 
 	# 获取当前层级
 	# 由于页面上可能有很多class为active的元素
 	# 所以使用层级定位最为保险
-	puts dr.find_element(:class, 'breadcrumb').find_element(:class, 'active').text
+	puts dr.find_element(:class, 'ulli').find_element(:class, 'active').text
 
 	dr.quit()
 
