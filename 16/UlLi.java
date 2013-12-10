@@ -7,12 +7,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 
-public class Breadcrumb {
+public class UlLi {
 
 	public static void main(String[] args) throws InterruptedException {
 		WebDriver dr = new ChromeDriver();
 		
-		File file = new File("src/breadcrumb.html");
+		File file = new File("src/ULLi.html");
 		String filePath = "file:///" + file.getAbsolutePath();
 		System.out.printf("now accesss %s \n", filePath);
 		
@@ -20,7 +20,7 @@ public class Breadcrumb {
 		Thread.sleep(1000);
 		
 //		获得其父层级
-		List<WebElement> ancestors = dr.findElement(By.className("breadcrumb")).findElements(By.tagName("a"));
+		List<WebElement> ancestors = dr.findElement(By.className("ultest")).findElements(By.tagName("a"));
 		for(WebElement link : ancestors){
 			System.out.println(link.getText());
 		}
@@ -28,7 +28,7 @@ public class Breadcrumb {
 //		获取当前层级
 //		由于页面上可能有很多class为active的元素
 //		所以使用层级定位最为保险
-		WebElement current = dr.findElement(By.className("breadcrumb")).findElement(By.className("active"));
+		WebElement current = dr.findElement(By.className("ultest")).findElement(By.className("active"));
 		System.out.println(current.getText());
 		
 		Thread.sleep(1000);
